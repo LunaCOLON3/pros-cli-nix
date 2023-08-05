@@ -25,7 +25,7 @@ https://nixos.org/download.html
 
 Then cd into the directory you want in you terminal and run:
 ```sh
-nix flake init --template github:BattleCh1cken/pros-cli-nix#template
+nix flake init --template github:BattleCh1cken/pros-cli-nix#default
 nix develop
 pros c n $(pwd)
 ```

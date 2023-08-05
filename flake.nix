@@ -24,13 +24,14 @@
           };
         };
 
-      flake = {
-        templates = {
-          default = {
-            path = ./template;
-            description = "basic dev environment for pros";
-          };
+      templates = {
+        default = {
+          path = ./template;
+          description = "basic dev environment for pros";
         };
       };
+
+
+      flake = { };
     };
 }

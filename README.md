@@ -11,13 +11,13 @@ The first thing you'll need to do is install Nix.
 Nix is available for ~~all~~ most linux distros, macOS and is even a standalone distro! If you want to use windows, use WSL.
 To get started install nix with your package manager:
 ```sh
-#pacman
+# Arch Linux
 sudo pacman -S nix
 
-#Or run the shell script
+# Works on most distros
 sh <(curl -L https://nixos.org/nix/install) --daemon
 
-#If on macOS
+# MacOS
 $ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 More info here:

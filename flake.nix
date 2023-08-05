@@ -15,23 +15,18 @@
         , ...
         }: {
           packages.default = pkgs.python310Packages.callPackage ./pros-cli.nix { };
-          packages.pros-cli = pkgs.python310Packages.callPackage ./pros-cli.nix { };
 
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              hello
-            ];
+
+        };
+      flake = {
+        templates = {
+          default = {
+            path = ./template;
+            description = "basic dev environment for pros";
           };
         };
 
-      templates = {
-        default = {
-          path = ./template;
-          description = "basic dev environment for pros";
-        };
       };
 
-
-      flake = { };
     };
 }

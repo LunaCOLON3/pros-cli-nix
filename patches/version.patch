@@ -7,7 +7,7 @@ index 96ebb12..4657fb8 100644
                      if ver is not None:
                          return ver
 +    try:
-+        ver="3.1.4 (This has been overridden)"
++        ver="3.4.3 (This has been overridden)"
 +        return ver
 +    except:
 +        pass

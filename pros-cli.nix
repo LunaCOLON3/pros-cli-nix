@@ -5,6 +5,7 @@
 , fetchFromGitLab
 , fetchPypi
 , click
+, rich-click
 , pyserial
 , cachetools
 , requests
@@ -20,20 +21,14 @@
 }:
 buildPythonApplication rec {
   pname = "pros-cli";
-  version = "da40202739658f54c64c3d5a1d284e8896a0c71c";
+  version = "93a0288b6b24ac71d5060c8acaec4074dfbabffc";
 
   src = fetchFromGitHub {
     owner = "purduesigbots";
     repo = "pros-cli";
     rev = "${version}";
-    hash = "sha256-Idgraf6F1d1P9ZZZjRZxUtVH4ZBzphAAnMvV8cR+D7s=";
+    hash = "sha256-1RnJd5k8vW2uuyIPCKq+MkQ35sKYuTs5xgidD4Su0mM=";
   };
-
-  patches = [
-    #./patches/pyinstaller.patch
-    #./patches/dependencies.patch
-    ./patches/version.patch
-  ];
 
   doCheck = false;
 
@@ -41,9 +36,8 @@ buildPythonApplication rec {
   postPatch = ''
     substituteInPlace requirements.txt \
       --replace 'scan-build==2.0.13' 'scan-build' \
-      --replace 'pypng==0.0.20' 'pypng' \
       --replace 'pyinstaller' ' ' \
-      --replace 'click>=6,<7' 'click' \
+      --replace 'pypng==0.0.20' 'pypng' \
   '';
 
 
@@ -55,6 +49,7 @@ buildPythonApplication rec {
     in
     [
       click # >=6,<7
+      rich-click
       pyserial
       cachetools
       requests

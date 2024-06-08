@@ -21,7 +21,7 @@
 }:
 buildPythonApplication rec {
   pname = "pros-cli";
-  version = "4c00d8e3c6caa377e67ce0cf84923feba5533f23";
+  version = "3.5.4";
 
   src = fetchFromGitHub {
     owner = "purduesigbots";

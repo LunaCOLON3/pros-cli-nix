@@ -15,6 +15,7 @@
 , pyzmq
 , sentry-sdk
 , pypng
+, setuptools
 }:
 buildPythonApplication rec {
   pname = "pros-cli";
@@ -32,7 +33,7 @@ buildPythonApplication rec {
   # Relax some dependencies
   postPatch =
     ''
-      echo  "3.5.4" >> version
+      echo  "version = '3.5.4'" >> _constants.py
 
       substituteInPlace requirements.txt \
         --replace 'scan-build==2.0.13' 'scan-build' \
@@ -64,6 +65,7 @@ buildPythonApplication rec {
       sentry-sdk
       observable
       pypng # ==0.0.20
+      setuptools
     ];
 
   meta = with lib; {

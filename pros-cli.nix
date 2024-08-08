@@ -2,8 +2,6 @@
 , callPackage
 , buildPythonApplication
 , fetchFromGitHub
-, fetchFromGitLab
-, fetchPypi
 , click
 , rich-click
 , pyserial
@@ -17,7 +15,6 @@
 , pyzmq
 , sentry-sdk
 , pypng
-,
 }:
 buildPythonApplication rec {
   pname = "pros-cli";
@@ -33,12 +30,15 @@ buildPythonApplication rec {
   doCheck = false;
 
   # Relax some dependencies
-  postPatch = ''
-    substituteInPlace requirements.txt \
-      --replace 'scan-build==2.0.13' 'scan-build' \
-      --replace 'pyinstaller' ' ' \
-      --replace 'pypng==0.0.20' 'pypng' \
-  '';
+  postPatch =
+    ''
+      echo  "3.5.4" >> version
+
+      substituteInPlace requirements.txt \
+        --replace 'scan-build==2.0.13' 'scan-build' \
+        --replace 'pyinstaller' ' ' \
+        --replace 'pypng==0.0.20' 'pypng' \
+    '';
 
 
   propagatedBuildInputs =

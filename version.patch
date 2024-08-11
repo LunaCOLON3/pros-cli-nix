@@ -1,0 +1,14 @@
+index 294da89..af48db7 100644
+--- a/pros/common/utils.py
++++ b/pros/common/utils.py
+@@ -12,6 +12,10 @@ import pros
+ 
+ @lru_cache(1)
+ def get_version():
++    try:
++        return "3.5.4"
++    except:
++        pass
+     try:
+         ver = open(os.path.join(os.path.dirname(__file__), '..', '..', 'version')).read().strip()
+         if ver is not None:

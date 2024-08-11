@@ -30,6 +30,8 @@ buildPythonApplication rec {
 
   doCheck = false;
 
+  patches = [ ./version.patch ];
+
   # Relax some dependencies
   postPatch =
     ''

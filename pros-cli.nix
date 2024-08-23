@@ -25,7 +25,7 @@ buildPythonApplication rec {
     owner = "purduesigbots";
     repo = "pros-cli";
     rev = "${version}";
-    hash = "sha256-1RnJd5k8vW2uuyIPCKq+MkQ35sKYuTs5xgidD4Su0mM=";
+    hash = "sha256-za7XBPn8inWyGinTUW1Kqs3711jgpGzmGj4ierynPkA=";
   };
 
   doCheck = false;

@@ -16,16 +16,17 @@
 , sentry-sdk
 , pypng
 , setuptools
+, installShellFiles
 }:
 buildPythonApplication rec {
   pname = "pros-cli";
-  version = "3.5.4";
+  version = "a075f9455ef9f738fc806f963ec678238998348a";
 
   src = fetchFromGitHub {
     owner = "purduesigbots";
     repo = "pros-cli";
     rev = "${version}";
-    hash = "sha256-za7XBPn8inWyGinTUW1Kqs3711jgpGzmGj4ierynPkA=";
+    hash = "sha256-cEtF2W7T2uit4SWvQe/bFHyrzyP/rAEyKHcDlFjZGik=";
   };
 
   doCheck = false;
@@ -35,14 +36,11 @@ buildPythonApplication rec {
   # Relax some dependencies
   postPatch =
     ''
-      echo  "version = '3.5.4'" >> _constants.py
-
       substituteInPlace requirements.txt \
         --replace 'scan-build==2.0.13' 'scan-build' \
         --replace 'pyinstaller' ' ' \
         --replace 'pypng==0.0.20' 'pypng' \
     '';
-
 
   propagatedBuildInputs =
     let

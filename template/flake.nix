@@ -20,7 +20,7 @@
         packages = with pkgs; [
           pros-cli-nix.packages.${system}.default
           clang-tools
-          gcc-arm-embedded-10
+          gcc-arm-embedded-13
         ];
       };
     });

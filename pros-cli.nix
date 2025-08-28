@@ -30,6 +30,8 @@ buildPythonApplication rec {
   };
 
   doCheck = false;
+  pyproject = true;
+  build-system = [setuptools];
 
   patches = [ ./version.patch ];
 

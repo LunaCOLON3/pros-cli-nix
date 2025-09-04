@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     utils.url = "github:numtide/flake-utils";
-    pros-cli-nix.url = "github:BattleCh1cken/pros-cli-nix";
+    pros-cli-nix.url = "github:LunaCOLON3/pros-cli-nix";
   };
 
   outputs =
